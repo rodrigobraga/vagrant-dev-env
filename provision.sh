@@ -11,7 +11,7 @@ apt-get autoremove -y
 apt-get clean
 
 #
-locale-gen pt_BR
+locale-gen pt_BR.*
 
 # 
 apt-get install -y g++ make curl git vim python python-setuptools python-virtualenv python-software-properties screen samba nginx postgresql
