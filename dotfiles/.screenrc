@@ -8,3 +8,4 @@ bindkey -k F2 next
 #startup_message off
 #hardstatus alwayslastline
 #hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"
+

@@ -68,10 +68,10 @@ set laststatus=2
 set showmatch
  
 " Mapeia ctrl+k para ir para a palavra anterior
-map!  bi
+map! bi
  
 " Mapeia ctrl+l para ir para a proxima palavra
-map!  wwi
+map! 
  
 " auto-identação de blocos (após usar :<enter>)
 "im :<CR> :<CR><TAB>
@@ -144,3 +144,4 @@ endif " has("autocmd")
 "
 "  au FileType python set foldenable foldmethod=indent
 "augroup END
+ 
