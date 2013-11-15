@@ -1,0 +1,43 @@
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.gz
+*.tar
+*.zip
+
+# Logs #
+########
+*.log
+
+# Security #
+############
+dotfiles/.ssh/*rsa*
+
+# Vagrant #
+###########
+.vagrant
+*.box
+precise64
+precise64/*
+
+# detritus from OS's
+#############
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac crap
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
