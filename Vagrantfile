@@ -11,7 +11,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.box_url = "precise64.box"
 
   config.vm.network :forwarded_port, guest: 22, host: 2200
-  config.vm.network :forwarded_port, guest: 80, host: 4000
+  config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 4000, host: 4000
+
+  config.vm.network "public_network"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize [
