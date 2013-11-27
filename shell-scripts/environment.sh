@@ -1,11 +1,11 @@
 #!/bin/sh
 
-cp /vagrant/bin/common-gen-key.sh /usr/local/bin/
-cp /vagrant/bin/bitbucket-key.sh /usr/local/bin/
-cp /vagrant/bin/github-key.sh /usr/local/bin/
-cp /vagrant/bin/environment.sh /usr/local/bin/
-
-chmod +x /usr/local/bin/environment.sh /usr/local/bin/common-gen-key.sh /usr/local/bin/github-key.sh /usr/local/bin/bitbucket-key.sh;
+for f in "bitbucket-key.sh" "common-gen-key.sh" "environment.sh" "github-key.sh"
+do
+    cp /vagrant/bin/$f /usr/local/bin/
+    dos2unix /usr/local/bin/$f
+    chmod +x /usr/local/bin/$f
+done
 
 echo " ******************************************************************"
 echo " ******************************************************************"
