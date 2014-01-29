@@ -9,6 +9,6 @@ apt-get clean
 
 locale-gen pt_BR.*
 
-apt-get install -y g++ make curl git vim python python-dev python-setuptools python-virtualenv python-software-properties screen samba nginx postgresql postgresql-server-dev-all dos2unix
+apt-get install -y g++ make curl git vim vim-scripts python python-dev python-setuptools python-virtualenv python-software-properties screen samba nginx postgresql postgresql-server-dev-all dos2unix
 
 echo 'if [ -d "/vagrant/bin" ]; then PATH=$PATH":/vagrant/bin"; fi' >> ~/.profile
