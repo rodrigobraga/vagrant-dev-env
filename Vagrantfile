@@ -62,6 +62,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     s.args = ""
   end
 
+  config.vm.provision :shell do |s|
+    s.path = "shell-scripts/node.sh"
+    s.args = ""
+  end
+
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
   # config.ssh.forward_agent = true

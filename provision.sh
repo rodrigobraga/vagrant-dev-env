@@ -7,6 +7,6 @@ apt-get clean
 
 locale-gen pt_BR.*
 
-apt-get install -y g++ make curl linux-image-generic-lts-raring linux-headers-generic-lts-raring git vim vim-scripts python python-dev screen samba dos2unix
+apt-get install -y g++ make curl linux-image-generic-lts-raring linux-headers-generic-lts-raring git vim vim-scripts python python-dev python-software-properties software-properties-common screen samba dos2unix
 
 echo 'if [ -d "/vagrant/bin" ]; then PATH=$PATH":/vagrant/bin"; fi' >> ~/.profile

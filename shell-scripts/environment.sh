@@ -7,6 +7,9 @@ do
     chmod +x /usr/local/bin/$f
 done
 
+# create 'default' dir to projects
+mkdir /home/vagrant/repos
+
 echo " ******************************************************************"
 echo " ******************************************************************"
 echo " **                                                              **"
