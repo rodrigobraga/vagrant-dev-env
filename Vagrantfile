@@ -53,17 +53,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision :shell do |s|
-    s.path = "shell-scripts/docker.sh"
+    s.path = "shell-scripts/node.sh"
     s.args = ""
   end
 
   config.vm.provision :shell do |s|
     s.path = "shell-scripts/environment.sh"
-    s.args = ""
-  end
-
-  config.vm.provision :shell do |s|
-    s.path = "shell-scripts/node.sh"
     s.args = ""
   end
 

@@ -9,7 +9,7 @@ apt-get install nodejs -y
 echo 'if [ -d "/usr/lib/node_modules" ]; then NODE_PATH="/usr/lib/node_modules"; fi' >> ~/.profile
 
 # see http://www.deployd.com
-#npm install deployd -g
+# npm install deployd -g
 
 # task tools
 npm install -g grunt
@@ -18,4 +18,4 @@ npm install -g grunt
 npm install -g bower
 
 # RequireJS / r.js
-#npm install -g requirejs
+npm install -g requirejs

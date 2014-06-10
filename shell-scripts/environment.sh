@@ -7,8 +7,14 @@ do
     chmod +x /usr/local/bin/$f
 done
 
-# create 'default' dir to projects
-mkdir /home/vagrant/repos
+# backup and update Samba conf
+mv /etc/samba/smb.conf /etc/samba/smb.backup.conf
+cp /vagrant/conf/smb.conf /etc/samba/smb.conf
+dos2unix /etc/samba/smb.conf
+
+# git
+git config --global user.email "rodrigobraga@msn.com"
+git config --global user.name "Rodrigo Braga"
 
 echo " ******************************************************************"
 echo " ******************************************************************"

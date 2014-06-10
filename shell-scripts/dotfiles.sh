@@ -7,4 +7,4 @@ do
     dos2unix /home/vagrant/$f
 done
 
-source ~/.bash_profile
+#source /home/vagrant/.bash_profile
