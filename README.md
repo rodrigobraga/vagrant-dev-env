@@ -5,4 +5,4 @@ Vagrant development environment provisioned with shell scripts on a (linux/ubunt
 
 ## Virtual Box dependencies
 
-```vagrant plugin install vagrant-vbguest*```
+```vagrant plugin install vagrant-vbguest```
