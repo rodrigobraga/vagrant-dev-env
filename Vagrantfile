@@ -24,8 +24,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.network "forwarded_port", guest: 80, host: 8080
 
   config.vm.network :forwarded_port, guest: 22, host: 2200
-  config.vm.network :forwarded_port, guest: 80, host: 8080
+
   config.vm.network :forwarded_port, guest: 4000, host: 4000
+  config.vm.network :forwarded_port, guest: 5000, host: 5000
+  config.vm.network :forwarded_port, guest: 6000, host: 6000
+  config.vm.network :forwarded_port, guest: 7000, host: 7000
+  config.vm.network :forwarded_port, guest: 8000, host: 8000
+  config.vm.network :forwarded_port, guest: 9000, host: 9000
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -34,7 +39,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  config.vm.network "public_network"
+  config.vm.network "public_network" #, ip: "192.168.1.10"
+
+  # set auto_update to false, if you do NOT want to check the correct 
+  # additions version when booting this machine
+  config.vbguest.auto_update = true
+
+  # do NOT download the iso file from a webserver
+  config.vbguest.no_remote = false
 
   config.vm.provider :virtualbox do |vb|
     vb.customize [
@@ -54,6 +66,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell do |s|
     s.path = "shell-scripts/node.sh"
+    s.args = ""
+  end
+
+  config.vm.provision :shell do |s|
+    s.path = "shell-scripts/heroku.sh"
     s.args = ""
   end
 
