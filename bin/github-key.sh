@@ -6,6 +6,7 @@ _send_key(){
     local ID_FILE_PUB=$1;
     local USERNAME=$2;
     local PASSWORD=$3;
+    local LABEL=$4;
 
     local CURL;
     local KEY_VALUE;
@@ -14,7 +15,7 @@ _send_key(){
 
     CURL="curl -k -X POST -sL -w \nRETCODE:%{http_code} ";
     CURL="${CURL} --user ${USERNAME}:${PASSWORD}";
-    $CURL https://api.github.com/user/keys -d "{\"title\":\"vagrant-dev-env\", \"key\": \"${KEY_VALUE}\"}";
+    $CURL https://api.github.com/user/keys -d "{\"title\":\"${LABEL}\", \"key\": \"${KEY_VALUE}\"}";
     return $?;
 }
 

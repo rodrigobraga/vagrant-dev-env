@@ -37,6 +37,14 @@ retrieve_password(){
     return 0;
 }
 
+retrieve_label(){
+    local LABEL=$1;
+    read -p "label for SSH-KEY: " LABEL;
+
+    echo $LABEL;
+    return 0;
+}
+
 _send_key(){
     echo "Not implemented";
     exit 1;
@@ -91,6 +99,7 @@ gen_key_main(){
     local USERNAME;
     local PASSWORD;
     local KEY_VALUE;
+    local LABEL;
     local CURL_COMMAND;
 
     gen_key $ID_FILE $SSH_CONFIG;
@@ -100,8 +109,9 @@ gen_key_main(){
 
     USERNAME=`retrieve_user ${SERVICE_NAME}`;
     PASSWORD=`retrieve_password ${SERVICE_NAME}`;
+    LABEL=`retrieve_label ${LABEL}`;
 
-    send_key $ID_FILE_PUB $USERNAME $PASSWORD;
+    send_key $ID_FILE_PUB $USERNAME $PASSWORD $LABEL;
     if [ $? != 0 ]; then
         exit 1;
     fi;
