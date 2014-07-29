@@ -9,6 +9,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
+  config.vm.host_name = "vagrant-dev-env"
+
   # Every Vagrant virtual environment requires a box to build off of.
   #config.vm.box = "hashicorp/precise64"
   config.vm.box = "precise64.box"
@@ -66,11 +68,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell do |s|
     s.path = "shell-scripts/node.sh"
-    s.args = ""
-  end
-
-  config.vm.provision :shell do |s|
-    s.path = "shell-scripts/heroku.sh"
     s.args = ""
   end
 
