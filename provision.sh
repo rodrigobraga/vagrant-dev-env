@@ -17,7 +17,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confd
 sudo apt-get autoremove -y
 sudo apt-get clean
 
-
 apt-get install -y  g++                                 \
                     make                                \
                     curl                                \
@@ -25,8 +24,8 @@ apt-get install -y  g++                                 \
                     linux-headers-generic-lts-raring    \
                     apt-transport-https                 \
                     git                                 \
-                    vim                                 \
                     ssh                                 \
+                    vim                                 \
                     vim-scripts                         \
                     python                              \
                     python-dev                          \
@@ -36,8 +35,6 @@ apt-get install -y  g++                                 \
                     ruby-rvm                            \
                     software-properties-common          \
                     screen                              \
-                    heroku                              \
-                    heroku-toolbelt                     \
                     samba                               \
                     dos2unix
 

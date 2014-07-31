@@ -36,12 +36,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  #config.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  config.vm.network "public_network" #, ip: "192.168.1.10"
+  config.vm.network "public_network" #, ip: "192.168.33.10"
 
   # set auto_update to false, if you do NOT want to check the correct 
   # additions version when booting this machine
@@ -70,6 +70,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     s.path = "shell-scripts/node.sh"
     s.args = ""
   end
+
+  #config.vm.provision :shell do |s|
+  #  s.path = "shell-scripts/heroku.sh"
+  #  s.args = ""
+  #end
 
   config.vm.provision :shell do |s|
     s.path = "shell-scripts/environment.sh"
