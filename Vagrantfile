@@ -12,8 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.host_name = "vagrant-dev-env"
 
   # Every Vagrant virtual environment requires a box to build off of.
-  #config.vm.box = "hashicorp/precise64"
-  config.vm.box = "precise64.box"
+  config.vm.box = "ubuntu/trusty64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -71,10 +70,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     s.args = ""
   end
 
-  #config.vm.provision :shell do |s|
-  #  s.path = "shell-scripts/heroku.sh"
-  #  s.args = ""
-  #end
+  config.vm.provision :shell do |s|
+    s.path = "shell-scripts/docker.sh"
+    s.args = ""
+  end
+
+  config.vm.provision :shell do |s|
+    s.path = "shell-scripts/heroku.sh"
+    s.args = ""
+  end
 
   config.vm.provision :shell do |s|
     s.path = "shell-scripts/environment.sh"
