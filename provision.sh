@@ -26,6 +26,7 @@ apt-get install -y  g++                                 \
                     vim-scripts                         \
                     python                              \
                     python-dev                          \
+                    python-pip                          \
                     python-software-properties          \
                     ruby                                \
                     ruby-dev                            \
