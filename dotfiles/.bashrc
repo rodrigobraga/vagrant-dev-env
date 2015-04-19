@@ -36,8 +36,7 @@ GREEN="\[\033[01;32m\]"
  
 export PS1="$YELLOW\$(parse_git_branch)$PS1"
 
-
-alias l="ls -lh"
+alias ls="ls -lha --color"
 alias ..="cd .."
 alias ...="cd ../.."
 alias vim="vim -p"
