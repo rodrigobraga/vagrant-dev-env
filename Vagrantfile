@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.host_name = "vagrant-dev-env"
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/vivid64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -24,16 +24,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
 
-  config.vm.network :forwarded_port, guest: 2000, host: 2000
-  config.vm.network :forwarded_port, guest: 3000, host: 3000
+  config.vm.network :forwarded_port, guest: 80, host: 80
   config.vm.network :forwarded_port, guest: 4000, host: 4000
-  config.vm.network :forwarded_port, guest: 5000, host: 5000
-  config.vm.network :forwarded_port, guest: 6000, host: 6000
-  config.vm.network :forwarded_port, guest: 7000, host: 7000
   config.vm.network :forwarded_port, guest: 8000, host: 8000
-  config.vm.network :forwarded_port, guest: 9000, host: 9000
-
-  config.vm.network :forwarded_port, guest: 8080, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -44,7 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # your network.
   config.vm.network "public_network" #, ip: "192.168.33.10"
 
-  # set auto_update to false, if you do NOT want to check the correct 
+  # set auto_update to false, if you do NOT want to check the correct
   # additions version when booting this machine
   config.vbguest.auto_update = true
 
@@ -63,27 +56,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision :shell do |s|
-    s.path = "shell-scripts/dotfiles.sh"
-    s.args = ""
-  end
-
-  config.vm.provision :shell do |s|
-    s.path = "shell-scripts/node.sh"
+    s.path = "shell-scripts/environment.sh"
     s.args = ""
   end
 
   config.vm.provision :shell do |s|
     s.path = "shell-scripts/docker.sh"
-    s.args = ""
-  end
-
-  config.vm.provision :shell do |s|
-    s.path = "shell-scripts/heroku.sh"
-    s.args = ""
-  end
-
-  config.vm.provision :shell do |s|
-    s.path = "shell-scripts/environment.sh"
     s.args = ""
   end
 

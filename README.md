@@ -1,7 +1,7 @@
 vagrant-dev-env
 ===============
 
-Vagrant development environment provisioned with shell scripts on a (linux/ubuntu) precise64 box
+Development Environment provisioned with shell scripts on a (linux/ubuntu) vivid64 box
 
 ## Virtual Box dependencies
 
