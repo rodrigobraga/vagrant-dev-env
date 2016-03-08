@@ -36,7 +36,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  config.vm.network "public_network" #, ip: "192.168.33.10"
+  config.vm.network "public_network",
+    use_dhcp_assigned_default_route: true
 
   # set auto_update to false, if you do NOT want to check the correct
   # additions version when booting this machine
