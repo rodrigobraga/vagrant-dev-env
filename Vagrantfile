@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.host_name = "vagrant-dev-env"
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu/wily64"
+  config.vm.box = "ubuntu/xenial64"
 
   config.vm.boot_timeout = 300
 
@@ -28,6 +28,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network :forwarded_port, guest: 4000, host: 4000
   config.vm.network :forwarded_port, guest: 5000, host: 5000
+  config.vm.network :forwarded_port, guest: 5000, host: 6000
+  config.vm.network :forwarded_port, guest: 5000, host: 7000
   config.vm.network :forwarded_port, guest: 8000, host: 8000
   config.vm.network :forwarded_port, guest: 9000, host: 9000
 
@@ -53,6 +55,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       "modifyvm", :id,
       "--memory", "2048"]
   end
+
+  config.vm.provision "file", source: "./", destination: "/tmp/vagrant/"
 
   config.vm.provision :shell do |s|
     s.path = "provision.sh"
