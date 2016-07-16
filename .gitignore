@@ -18,8 +18,6 @@ dotfiles/.ssh/*rsa*
 ###########
 .vagrant
 *.box
-precise64
-precise64/*
 
 # detritus from OS's
 #############
