@@ -3,7 +3,7 @@
 # docker
 curl -sSL https://get.docker.com/ | sh
 
-usermod -aG docker vagrant
+usermod -aG docker ubuntu
 
 # compose
 curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > docker-compose
