@@ -15,6 +15,6 @@ curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose --vers
 mv docker-compose-completion /etc/bash_completion.d/docker-compose
 
 # machine
-curl -L https://github.com/docker/machine/releases/download/v0.8.0/docker-machine-`uname -s`-`uname -m` > docker-machine
+curl -L https://github.com/docker/machine/releases/download/v0.8.1/docker-machine-`uname -s`-`uname -m` > docker-machine
 mv docker-machine /usr/local/bin/
 chmod +x /usr/local/bin/docker-machine
