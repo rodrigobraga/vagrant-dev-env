@@ -6,7 +6,7 @@ curl -sSL https://get.docker.com/ | sh
 usermod -aG docker ubuntu
 
 # compose
-curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` > docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > docker-compose
 mv docker-compose /usr/local/bin/
 chmod +x /usr/local/bin/docker-compose
 
@@ -15,6 +15,6 @@ curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose --vers
 mv docker-compose-completion /etc/bash_completion.d/docker-compose
 
 # machine
-curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-`uname -s`-`uname -m` > docker-machine
+curl -L https://github.com/docker/machine/releases/download/v0.9.0/docker-machine-`uname -s`-`uname -m` > docker-machine
 mv docker-machine /usr/local/bin/
 chmod +x /usr/local/bin/docker-machine
